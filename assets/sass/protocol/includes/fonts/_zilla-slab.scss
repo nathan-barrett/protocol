@@ -1,4 +1,4 @@
-@use "../../../../../theme/assets/sass/theme";
+@use "../config";
 
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -10,8 +10,8 @@
     font-family: 'Zilla Slab';
     font-style: normal;
     font-weight: normal;
-    src: url('#{theme.$font-path}/ZillaSlab-Regular.woff2') format('woff2'),
-         url('#{theme.$font-path}/ZillaSlab-Regular.woff') format('woff');
+    src: url('#{config.$font-path}/ZillaSlab-Regular.woff2') format('woff2'),
+         url('#{config.$font-path}/ZillaSlab-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -19,6 +19,6 @@
     font-family: 'Zilla Slab';
     font-style: normal;
     font-weight: bold;
-    src: url('#{theme.$font-path}/ZillaSlab-Bold.woff2') format('woff2'),
-         url('#{theme.$font-path}/ZillaSlab-Bold.woff') format('woff');
+    src: url('#{config.$font-path}/ZillaSlab-Bold.woff2') format('woff2'),
+         url('#{config.$font-path}/ZillaSlab-Bold.woff') format('woff');
 }

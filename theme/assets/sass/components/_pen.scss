@@ -1,4 +1,4 @@
-@use "../../../../assets/sass/protocol/includes/functions";
+@use "../../../../assets/sass/protocol/includes/themes";
 @use "../../../../assets/sass/protocol/includes/mixins/bidi";
 @use "../../../../assets/sass/protocol/includes/mixins/typography";
 @use "../../../../node_modules/@mozilla-protocol/tokens/dist";
@@ -9,8 +9,8 @@
 
 .Pen-title {
     @include typography.text-title-xs;
-    font-family: functions.get-theme('title-font-family');
-    color: functions.get-theme('title-text-color');
+    font-family: themes.get-theme('title-font-family');
+    color: themes.get-theme('title-text-color');
 }
 
 .Pen-previewLink {
@@ -18,7 +18,7 @@
     &:visited,
     &:hover,
     &:active {
-        color: functions.get-theme('title-text-color');
+        color: themes.get-theme('title-text-color');
     }
 
     svg {
@@ -30,13 +30,13 @@
 .Pen-previewButton {
     @include bidi.bidi(((margin-left, dist.$spacing-lg, margin-right, dist.$spacing-lg),));
     @include typography.text-body-sm;
-    color: functions.get-theme('link-color');
-    font-family: functions.get-theme('body-font-family');
+    color: themes.get-theme('link-color');
+    font-family: themes.get-theme('body-font-family');
     font-weight: bold;
 
     &:hover,
     &:active {
-        color: functions.get-theme('link-color-hover');
+        color: themes.get-theme('link-color-hover');
     }
 }
 

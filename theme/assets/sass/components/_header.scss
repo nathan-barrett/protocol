@@ -1,8 +1,8 @@
-@use "../../../../assets/sass/protocol/includes/functions";
+@use "../../../../assets/sass/protocol/includes/themes";
 @use "../../../../node_modules/@mozilla-protocol/tokens/dist";
 
 .Header {
-  background-color: functions.get-theme('background-color-inverse');
+  background-color: themes.get-theme('background-color-inverse');
 }
 
 .Header-button {

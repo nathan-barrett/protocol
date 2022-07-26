@@ -1,5 +1,11 @@
 @use "../../../../../node_modules/@mozilla-protocol/tokens/dist";
-@use "../mixins";
+
+// Bit of repetition to avoid the loop, copied from "mixins", there's definitely a better solution to find here
+@mixin border-box {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
 
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
@@ -15,7 +21,7 @@ $gutter-width:  dist.$layout-sm;
 // Usage:
 //  .foo { @include colspan(4); }
 @mixin colspan($columns) {
-    @include mixins.border-box;
+    @include border-box;
     width: $column-width * $columns;
     padding-left: $gutter-width * 0.5;
     padding-right: $gutter-width * 0.5;
@@ -27,26 +33,26 @@ $gutter-width:  dist.$layout-sm;
 }
 
 @mixin grid-quarter {
-    @include mixins.border-box;
+    @include border-box;
     width: 25%;
 }
 
 @mixin grid-third {
-    @include mixins.border-box;
+    @include border-box;
     width: 33.333%;
 }
 
 @mixin grid-half {
-    @include mixins.border-box;
+    @include border-box;
     width: 50%;
 }
 
 @mixin grid-two-thirds {
-    @include mixins.border-box;
+    @include border-box;
     width: 66.666%;
 }
 
 @mixin grid-three-quarters {
-    @include mixins.border-box;
+    @include border-box;
     width: 75%;
 }

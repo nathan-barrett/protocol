@@ -1,4 +1,4 @@
-@use "../../../../assets/sass/protocol/includes/functions";
+@use "../../../../assets/sass/protocol/includes/themes";
 @use "../../../../assets/sass/protocol/includes/mixins/typography";
 @use "../../../../node_modules/@mozilla-protocol/tokens/dist";
 
@@ -10,13 +10,13 @@
     }
 
     :link {
-        color: functions.get-theme('link-color');
+        color: themes.get-theme('link-color');
         text-decoration: underline;
 
         &:hover,
         &:focus,
         &:active {
-            color: functions.get-theme('link-color-hover');
+            color: themes.get-theme('link-color-hover');
             text-decoration: none;
         }
 
@@ -26,18 +26,18 @@
     }
 
     :visited {
-        color: functions.get-theme('link-color-visited');
+        color: themes.get-theme('link-color-visited');
 
         &:hover,
         &:focus,
         &:active {
-            color: functions.get-theme('link-color-visited-hover');
+            color: themes.get-theme('link-color-visited-hover');
         }
     }
 
     h1, h2, h3, h4, h5, h6 {
-        font-family: functions.get-theme('title-font-family');
-        color: functions.get-theme('title-text-color');
+        font-family: themes.get-theme('title-font-family');
+        color: themes.get-theme('title-text-color');
         font-weight: bold;
         margin: 1em 0 .5em;
         opacity: 1;

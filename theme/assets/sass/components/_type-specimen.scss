@@ -1,5 +1,4 @@
 @use "sass:map";
-@use "../../../../assets/sass/protocol/includes/functions";
 @use "../../../../assets/sass/protocol/includes/mixins/typography";
 @use "../../../../assets/sass/protocol/includes/themes";
 @use "../../../../node_modules/@mozilla-protocol/tokens/dist";
@@ -35,49 +34,49 @@
 
 .docs-scale-sample-title-2xl {
     @include typography.text-title-2xl;
-    font-family: functions.get-theme('title-font-family');
+    font-family: themes.get-theme('title-font-family');
     font-weight: bold;
 }
 
 .docs-scale-sample-title-xl {
     @include typography.text-title-xl;
-    font-family: functions.get-theme('title-font-family');
+    font-family: themes.get-theme('title-font-family');
     font-weight: bold;
 }
 
 .docs-scale-sample-title-lg {
     @include typography.text-title-lg;
-    font-family: functions.get-theme('title-font-family');
+    font-family: themes.get-theme('title-font-family');
     font-weight: bold;
 }
 
 .docs-scale-sample-title-md {
     @include typography.text-title-md;
-    font-family: functions.get-theme('title-font-family');
+    font-family: themes.get-theme('title-font-family');
     font-weight: bold;
 }
 
 .docs-scale-sample-title-sm {
     @include typography.text-title-sm;
-    font-family: functions.get-theme('title-font-family');
+    font-family: themes.get-theme('title-font-family');
     font-weight: bold;
 }
 
 .docs-scale-sample-title-xs {
     @include typography.text-title-xs;
-    font-family: functions.get-theme('title-font-family');
+    font-family: themes.get-theme('title-font-family');
     font-weight: bold;
 }
 
 .docs-scale-sample-title-2xs {
     @include typography.text-title-2xs;
-    font-family: functions.get-theme('title-font-family');
+    font-family: themes.get-theme('title-font-family');
     font-weight: bold;
 }
 
 .docs-scale-sample-title-3xs {
     @include typography.text-title-3xs;
-    font-family: functions.get-theme('title-font-family');
+    font-family: themes.get-theme('title-font-family');
     font-weight: bold;
 }
 
