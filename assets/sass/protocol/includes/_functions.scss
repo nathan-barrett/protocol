@@ -1,3 +1,9 @@
+@use "sass:map";
+@use "sass:string";
+@use "lib";
+@use "mixins/images";
+@use "themes";
+
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -21,10 +27,10 @@
 //    str-replace($string, ' ', '-')
 
 @function str-replace($string, $search, $replace: '') {
-  $index: str-index($string, $search);
+  $index: string.index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return string.slice($string, 1, $index - 1) + $replace + images.str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
   }
 
   @return $string;
@@ -42,7 +48,7 @@
   $collection: ();
 
   @each $map in $maps {
-    $collection: map-merge($collection, $map);
+    $collection: map.merge($collection, $map);
   }
 
   @return $collection;
@@ -63,29 +69,29 @@
 
 @function type-scale($scale) {
   // Default to Firefox brand scale
-  $scale-map: $theme-type-scale-firefox;
+  $scale-map: themes.$theme-type-scale-firefox;
 
   // Firefox condensed
-  @if $type-scale == 'condensed' {
-    $scale-map: $theme-type-scale-condensed-firefox;
+  @if lib.$type-scale == 'condensed' {
+    $scale-map: themes.$theme-type-scale-condensed-firefox;
   }
 
   // Switch to Mozilla brand scale
-  @if $brand-theme == 'mozilla' {
-    $scale-map: $theme-type-scale-mozilla;
+  @if lib.$brand-theme == 'mozilla' {
+    $scale-map: themes.$theme-type-scale-mozilla;
   }
 
   // Mozilla condensed
-  @if $brand-theme == 'mozilla' and $type-scale == 'condensed' {
-    $scale-map: $theme-type-scale-condensed-mozilla;
+  @if lib.$brand-theme == 'mozilla' and lib.$type-scale == 'condensed' {
+    $scale-map: themes.$theme-type-scale-condensed-mozilla;
   }
 
-  @if not map-has-key($scale-map, $scale) {
+  @if not map.has-key($scale-map, $scale) {
     @error '`#{$scale}` is not a valid type scale variable name. '
-      + 'Valid variable names: #{map-keys($scale-map)}';
+      + 'Valid variable names: #{map.keys($scale-map)}';
   }
 
-  @return map-get($scale-map, $scale);
+  @return map.get($scale-map, $scale);
 }
 
 
@@ -95,17 +101,17 @@
 
 @function get-theme($var) {
   // Default to Firefox theme
-  $theme-map: $theme-firefox;
+  $theme-map: themes.$theme-firefox;
 
   // Switch to Mozilla theme
-  @if $brand-theme == 'mozilla' {
-    $theme-map: $theme-mozilla;
+  @if lib.$brand-theme == 'mozilla' {
+    $theme-map: themes.$theme-mozilla;
   }
 
-  @if not map-has-key($theme-map, $var) {
+  @if not map.has-key($theme-map, $var) {
     @error '`#{$var}` is not a valid theme variable. '
-      + 'Valid theme variable names: #{map-keys($theme-map)}';
+      + 'Valid theme variable names: #{map.keys($theme-map)}';
   }
 
-  @return map-get($theme-map, $var);
+  @return map.get($theme-map, $var);
 }

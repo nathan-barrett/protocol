@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "../functions";
+
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -14,8 +17,8 @@
     //
     //  Add missing namespace
     //
-    @if not str-index($svg,xmlns) {
-        $svg: str-replace($svg, '<svg','<svg xmlns="http://www.w3.org/2000/svg"');
+    @if not string.index($svg,xmlns) {
+        $svg: functions.str-replace($svg, '<svg','<svg xmlns="http://www.w3.org/2000/svg"');
     }
     //
     //  Chunk up string in order to avoid
@@ -24,19 +27,19 @@
     $encoded:'';
     $slice: 2000;
     $index: 0;
-    $loops: ceil(math.div(str-length($svg), $slice));
+    $loops: math.ceil(math.div(string.length($svg), $slice));
     @for $i from 1 through $loops {
-        $chunk: str-slice($svg, $index, $index + $slice - 1);
+        $chunk: string.slice($svg, $index, $index + $slice - 1);
         //
         //   Encode
         //
-        $chunk: str-replace($chunk, '"', '\'');
-        $chunk: str-replace($chunk, '%', '%25');
-        $chunk: str-replace($chunk, '#', '%23');
-        $chunk: str-replace($chunk, '{', '%7B');
-        $chunk: str-replace($chunk, '}', '%7D');
-        $chunk: str-replace($chunk, '<', '%3C');
-        $chunk: str-replace($chunk, '>', '%3E');
+        $chunk: functions.str-replace($chunk, '"', '\'');
+        $chunk: functions.str-replace($chunk, '%', '%25');
+        $chunk: functions.str-replace($chunk, '#', '%23');
+        $chunk: functions.str-replace($chunk, '{', '%7B');
+        $chunk: functions.str-replace($chunk, '}', '%7D');
+        $chunk: functions.str-replace($chunk, '<', '%3C');
+        $chunk: functions.str-replace($chunk, '>', '%3E');
 
         //
         //    The maybe list
@@ -64,11 +67,11 @@
 
 //  Helper function to replace characters in a string
 @function str-replace($string, $search, $replace: '') {
-    $index: str-index($string, $search);
+    $index: string.index($string, $search);
     @return if($index,
-        str-slice($string, 1, $index - 1) + $replace +
-        str-replace(str-slice($string, $index +
-        str-length($search)), $search, $replace),
+        string.slice($string, 1, $index - 1) + $replace +
+        functions.str-replace(string.slice($string, $index +
+        string.length($search)), $search, $replace),
         $string);
 }
 

@@ -42,9 +42,5 @@ $brand-theme: 'mozilla' !default;
 
 $type-scale: 'standard' !default;
 
-
-// Import all the things!
-@use '../../../../node_modules/@mozilla-protocol/tokens/dist/index.scss';
-@use 'functions';
-@use 'themes';
-@use 'mixins';
+$font-path: 'fonts' !default;
+$image-path: 'images' !default;

@@ -1,6 +1,8 @@
+@use "../../../../node_modules/@mozilla-protocol/tokens/dist";
+
 .Search-input {
   color: white;
 
   border: none;
-  background-color: $color-dark-gray-50;
+  background-color: dist.$color-dark-gray-50;
 }

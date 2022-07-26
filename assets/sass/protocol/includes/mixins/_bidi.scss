@@ -1,3 +1,4 @@
+@use "sass:meta";
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -45,7 +46,7 @@
 @mixin bidi($list) {
     & {
         @each $property, $ltr-value, $inverse-val-or-prop, $inverse-value in $list {
-            @if type-of($ltr-value) == 'null' or type-of($inverse-val-or-prop) == 'null' {
+            @if meta.type-of($ltr-value) == 'null' or meta.type-of($inverse-val-or-prop) == 'null' {
                 @warn $list; // I don't know why this won't output as part of the error
                 @error 'Error processing @mixin bidi(), see previous warning for stack trace';
 

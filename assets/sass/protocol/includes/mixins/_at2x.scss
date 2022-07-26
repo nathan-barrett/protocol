@@ -1,3 +1,6 @@
+@use "sass:string";
+@use "../../../../../node_modules/@mozilla-protocol/tokens/dist";
+
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -21,7 +24,7 @@
     // Set a counter and get the length of the image path.
     $position: -1;
     $strpath: '#{$path}';
-    $length: str-length($strpath);
+    $length: string.length($strpath);
 
     // Loop through the image path and find the position of
     // the dot to determine the file extension.
@@ -30,8 +33,8 @@
     // increments (10 is an arbitrary number).
     @for $i from $length through $length - 10 {
       @if $position == -1 {
-          $char : str-slice($strpath, $i, $i);
-            @if str-index($char, '.') == 1 {
+          $char : string.slice($strpath, $i, $i);
+            @if string.index($char, '.') == 1 {
                 $position: $i;
             }
         }
@@ -41,8 +44,8 @@
    // slice the path into a base and an extension. Use that to
    // produce urls for different density environments.
     @if $position != -1 {
-        $base: str-slice($strpath, 1, $position - 1);
-        $ext: str-slice($strpath, $position + 1, $length);
+        $base: string.slice($strpath, 1, $position - 1);
+        $ext: string.slice($strpath, $position + 1, $length);
         $at2x_path: '#{$base}#{$hr-suffix}.#{$ext}';
 
         // Regular image for most screens.
@@ -50,7 +53,7 @@
         background-size: $w $h;
 
         // High-res image for high-res screens.
-        @media #{$mq-high-res} {
+        @media #{dist.$mq-high-res} {
             background-image: url('#{$at2x_path}');
             background-size: $w $h;
         }
