@@ -1,11 +1,5 @@
 @use "../../../../../node_modules/@mozilla-protocol/tokens/dist";
-
-// Bit of repetition to avoid the loop, copied from "mixins", there's definitely a better solution to find here
-@mixin border-box {
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
-}
+@use "../mixins";
 
 // This Source Code Form is subject to the terms of the Mozilla Public
 // License, v. 2.0. If a copy of the MPL was not distributed with this

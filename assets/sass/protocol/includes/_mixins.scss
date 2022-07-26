@@ -4,13 +4,6 @@
 
 @use "sass:math";
 
-@use 'mixins/at2x';
-@use 'mixins/gradients';
-@use 'mixins/grid';
-@use 'mixins/images';
-@use 'mixins/bidi';
-@use 'mixins/zap';
-@use 'mixins/typography';
 @use "../../../../node_modules/@mozilla-protocol/tokens/dist";
 @use "themes";
 

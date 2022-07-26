@@ -1,6 +1,6 @@
 @use "../../../../assets/sass/protocol/includes/themes";
-@use "../../../../assets/sass/protocol/includes/mixins/bidi";
-@use "../../../../assets/sass/protocol/includes/mixins/typography";
+@use "../../../../assets/sass/protocol/includes/utils/bidi";
+@use "../../../../assets/sass/protocol/includes/utils/typography";
 @use "../../../../node_modules/@mozilla-protocol/tokens/dist";
 
 .Pen {

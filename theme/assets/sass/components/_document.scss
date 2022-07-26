@@ -1,5 +1,5 @@
 @use "../../../../assets/sass/protocol/includes/themes";
-@use "../../../../assets/sass/protocol/includes/mixins/typography";
+@use "../../../../assets/sass/protocol/includes/utils/typography";
 
 .Document-title {
     @include typography.text-title-lg;
