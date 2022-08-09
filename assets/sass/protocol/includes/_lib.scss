@@ -8,8 +8,8 @@
 @forward 'themes' as theme-*;
 
 // Import all the things!
-@use '../../../../node_modules/@mozilla-protocol/tokens/dist/index.scss';
-@use 'functions';
-@use 'themes';
-@use 'mixins';
-@use 'utils';
+@forward '../../../../node_modules/@mozilla-protocol/tokens/dist/index.scss';
+@forward 'functions';
+@forward 'themes';
+@forward 'mixins';
+@forward 'utils';

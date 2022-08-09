@@ -2,7 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@import '../../includes/lib';
+@use '../../includes/lib';
 
 
 // We most frequently use lists for semantic structure and don't actually
@@ -14,7 +14,7 @@ ol {
 }
 
 ul.mzp-u-list-styled {
-    @include bidi(((margin-left, $layout-sm, margin-right, 0),));
+    @include lib.bidi(((margin-left, lib.$layout-sm, margin-right, 0),));
     list-style: disc;
 
     li {
@@ -22,20 +22,20 @@ ul.mzp-u-list-styled {
     }
 
     ul {
-        @include bidi(((margin-left, $layout-xs, margin-right, 0),));
+        @include lib.bidi(((margin-left, lib.$layout-xs, margin-right, 0),));
         list-style: circle;
         margin-bottom: 0;
     }
 
     ol {
-        @include bidi(((margin-left, $layout-xs, margin-right, 0),));
+        @include lib.bidi(((margin-left, lib.$layout-xs, margin-right, 0),));
         list-style: decimal;
         margin-bottom: 0;
     }
 }
 
 ol.mzp-u-list-styled {
-    @include bidi(((margin-left, $layout-sm, margin-right, 0),));
+    @include lib.bidi(((margin-left, lib.$layout-sm, margin-right, 0),));
     list-style: decimal;
 
     li {
@@ -43,13 +43,13 @@ ol.mzp-u-list-styled {
     }
 
     ol {
-        @include bidi(((margin-left, $layout-xs, margin-right, 0),));
+        @include lib.bidi(((margin-left, lib.$layout-xs, margin-right, 0),));
         list-style: lower-alpha;
         margin-bottom: 0;
     }
 
     ul {
-        @include bidi(((margin-left, $layout-xs, margin-right, 0),));
+        @include lib.bidi(((margin-left, lib.$layout-xs, margin-right, 0),));
         list-style: disc;
         margin-bottom: 0;
     }
@@ -62,12 +62,12 @@ dl.mzp-u-list-styled {
     }
 
     dd {
-        @include bidi(((margin-left, $layout-xs, margin-right, 0),));
+        @include lib.bidi(((margin-left, lib.$layout-xs, margin-right, 0),));
         margin-bottom: .25em;
     }
 
     ul, ol {
-        @include bidi(((margin-left, $layout-xs, margin-right, 0),));
+        @include lib.bidi(((margin-left, lib.$layout-xs, margin-right, 0),));
         margin-bottom: 0;
     }
     ul {

@@ -2,32 +2,32 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@import '../../includes/lib';
+@use '../../includes/lib';
 
 
 // This wrapper element sets the content width
 .mzp-l-content {
-    @include clearfix;
+    @include lib.clearfix;
     margin: 0 auto;
-    max-width: $content-max;
-    min-width: $content-xs - ($layout-xs * 2);
-    padding: get-theme('v-grid-xs') get-theme('h-grid-xs');
+    max-width: lib.$content-max;
+    min-width: lib.$content-xs - (lib.$layout-xs * 2);
+    padding: lib.get-theme('v-grid-xs') lib.get-theme('h-grid-xs');
     position: relative;
 
     &.mzp-t-content-sm {
-        max-width: $content-sm;
+        max-width: lib.$content-sm;
     }
 
     &.mzp-t-content-md {
-        max-width: $content-md;
+        max-width: lib.$content-md;
     }
 
     &.mzp-t-content-lg {
-        max-width: $content-lg;
+        max-width: lib.$content-lg;
     }
 
     &.mzp-t-content-xl {
-        max-width: $content-xl;
+        max-width: lib.$content-xl;
     }
 
     // Remove vertical spacing
@@ -43,11 +43,11 @@
         margin-bottom: 0;
     }
 
-    @media #{$mq-md} {
-        padding: get-theme('v-grid-md') get-theme('h-grid-md');
+    @media #{lib.$mq-md} {
+        padding: lib.get-theme('v-grid-md') lib.get-theme('h-grid-md');
     }
 
-    @media #{$mq-xl} {
-        padding: get-theme('v-grid-xl') get-theme('h-grid-xl');
+    @media #{lib.$mq-xl} {
+        padding: lib.get-theme('v-grid-xl') lib.get-theme('h-grid-xl');
     }
 }
