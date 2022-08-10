@@ -2,17 +2,17 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@use '../../includes/lib';
+@use '../../includes/lib' as *;
 
 
 :link {
-    color: lib.get-theme('link-color');
+    color: get-theme('link-color');
     text-decoration: underline;
 
     &:hover,
     &:focus,
     &:active {
-        color: lib.get-theme('link-color-hover');
+        color: get-theme('link-color-hover');
         text-decoration: none;
     }
 
@@ -22,20 +22,20 @@
 }
 
 :visited {
-    color: lib.get-theme('link-color-visited');
+    color: get-theme('link-color-visited');
 
     &:hover,
     &:focus,
     &:active {
-        color: lib.get-theme('link-color-visited-hover');
+        color: get-theme('link-color-visited-hover');
     }
 }
 
 .mzp-t-dark {
-    @include lib.light-links;
+    @include light-links;
 }
 
 .mzp-c-cta-link {
-    font-family: lib.get-theme('button-font-family');
+    font-family: get-theme('button-font-family');
     font-weight: bold;
 }

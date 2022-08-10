@@ -2,7 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@use '../../includes/lib';
+@use '../../includes/lib' as *;
 @use '../../includes/forms';
 
 
@@ -36,8 +36,8 @@ input,
 select,
 optgroup,
 textarea {
-    @include lib.font-base;
-    @include lib.text-body-md;
+    @include font-base;
+    @include text-body-md;
     line-height: 1.25;
 }
 
@@ -93,7 +93,7 @@ fieldset {
 
 legend {
     @include text-body-lg;
-    font-family: lib.get-theme('title-font-family');
+    font-family: get-theme('title-font-family');
     font-weight: bold;
     margin-bottom: forms.$field-v-spacing;
 }
@@ -128,19 +128,19 @@ input[type='tel'],
 input[type='text'],
 input[type='time'],
 input[type='url'] {
-    @include form-input;
+    @include forms.form-input;
 
     &::placeholder {
-        color: lib.$color-marketing-gray-70;
+        color: $color-marketing-gray-70;
     }
 
     &:hover {
-        border-color:forms.$field-border-color-hover;
+        border-color: forms.$field-border-color-hover;
     }
 
     &:focus {
         outline: none;
-        border-color: lib.$color-link;
+        border-color: $color-link;
         box-shadow: forms.$field-focus-ring;
 
         .mzp-t-dark & {
@@ -164,12 +164,12 @@ input[type='url'] {
 
     &:disabled,
     &[aria-disabled=true] {
-        background: lib.$color-marketing-gray-10;
-        border-color: lib.$color-marketing-gray-30;
-        color: lib.$color-marketing-gray-70;
+        background: $color-marketing-gray-10;
+        border-color: $color-marketing-gray-30;
+        color: $color-marketing-gray-70;
 
         &:focus {
-            border-color: lib.$color-marketing-gray-80;
+            border-color: $color-marketing-gray-80;
         }
     }
 }
@@ -216,21 +216,21 @@ input[type='search'] {
     padding: forms.$field-padding forms.$field-padding forms.$field-padding calc(1.5em + #{forms.$field-padding * 2});
 
     &:disabled {
-        background-image: lib.$url-image-search-form;
+        background-image: $url-image-search-form;
         background-repeat: no-repeat;
         background-position: left 8px top 50%;
         padding: forms.$field-padding forms.$field-padding forms.$field-padding calc(1.5em + #{forms.$field-padding * 2});
         &:hover {
-            background-image: lib.$url-image-search-form;
+            background-image: $url-image-search-form;
         }
     }
 
     &:hover {
-        background-image: lib.$url-image-search-link-hover;
+        background-image: $url-image-search-link-hover;
     }
 
     &:focus {
-        background-image: lib.$url-image-search-link;
+        background-image: $url-image-search-link;
     }
 
     [dir="rtl"] & {
@@ -241,7 +241,7 @@ input[type='search'] {
 
 input[type='color'],
 input[type='file'] {
-    background: lib.$color-white;
+    background: $color-white;
     border-radius: forms.$field-border-radius;
     border: forms.$field-border;
     line-height: 1.25;
@@ -252,7 +252,7 @@ input[type='file'] {
     }
 
     &:focus {
-        border-color: lib.$color-link;
+        border-color: $color-link;
         box-shadow: forms.$field-focus-ring;
         outline: none;
     }
@@ -273,12 +273,12 @@ input[type='file'] {
 
     &:disabled,
     &[aria-disabled=true] {
-        background: lib.$color-marketing-gray-30;
-        border-color: lib.$color-marketing-gray-30;
-        color: lib.$color-marketing-gray-70;
+        background: $color-marketing-gray-30;
+        border-color: $color-marketing-gray-30;
+        color: $color-marketing-gray-70;
 
         &:focus {
-            border-color: lib.$color-marketing-gray-80;
+            border-color: $color-marketing-gray-80;
         }
     }
 }
@@ -303,14 +303,14 @@ select {
         (background-position, right 8px top 50%, left 8px top 50%),
         (padding, forms.$field-padding forms.$symbol-spacing forms.$field-padding forms.$field-padding, forms.$field-padding forms.$field-padding forms.$field-padding forms.$symbol-spacing),
     ));
-    @include form-input;
-    background-image: lib.$url-image-arrow-down-form, forms.$select-bg;
+    @include forms.form-input;
+    background-image: $url-image-arrow-down-form, forms.$select-bg;
     background-repeat: no-repeat, repeat;
     background-size: 1.5em auto, 100%;
     display: block;
     font-weight: normal;
     max-width: 100%;
-    min-width: lib.$field-min-width;
+    min-width: forms.$field-min-width;
     text-overflow: ellipsis;
 
     // no down arrow on multi selects
@@ -318,7 +318,7 @@ select {
         &,
         &:hover,
         &:focus {
-            background: lib.$color-white;
+            background: $color-white;
             padding: forms.$field-padding;
         }
     }
@@ -329,12 +329,12 @@ select {
 
     &:hover {
         border-color: forms.$field-border-color-hover;
-        background-image: lib.$url-image-arrow-down-link-hover, forms.$select-bg;
+        background-image: $url-image-arrow-down-link-hover, forms.$select-bg;
     }
 
     &:focus {
-        border-color: lib.$color-link;
-        background-image: lib.$url-image-arrow-down-link, forms.$select-bg;
+        border-color: $color-link;
+        background-image: $url-image-arrow-down-link, forms.$select-bg;
         box-shadow: forms.$field-focus-ring;
         color: #222;
         outline: none;
@@ -362,15 +362,15 @@ select {
     &[aria-disabled=true] {
         background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'),
                           forms.$select-bg-disabled;
-        border-color: lib.$color-marketing-gray-30;
-        color: lib.$color-marketing-gray-70;
+        border-color: $color-marketing-gray-30;
+        color: $color-marketing-gray-70;
 
         &:hover {
-            border-color: lib.$color-marketing-gray-30;
+            border-color: $color-marketing-gray-30;
         }
 
         &:focus {
-            border-color: lib.$color-marketing-gray-80;
+            border-color: $color-marketing-gray-80;
         }
     }
 
@@ -391,26 +391,26 @@ fieldset {
 
 legend {
     .mzp-u-inline & {
-        @include field-label();
+        @include forms.field-label();
     }
 }
 
 label {
     &.mzp-u-inline {
-        @include bidi(((padding, 0 lib.$spacing-sm 0 0, 0 0 0 lib.$spacing-sm),));
+        @include bidi(((padding, 0 $spacing-sm 0 0, 0 0 0 $spacing-sm),));
         display: inline;
     }
 }
 
 .mzp-c-fieldnote {
-    @include form-info;
+    @include forms.form-info;
 
     .mzp-is-error & {
         color: forms.$form-red;
     }
 
     .mzp-c-button + & {
-        margin-top: lib.forms.$spacing-sm * -1;
+        margin-top: $spacing-sm * -1;
     }
 }
 
@@ -422,12 +422,12 @@ label {
     @include white-links;
     background-color: forms.$form-red;
     border-radius: forms.$field-border-radius;
-    color: lib.$color-white;
-    padding: lib.$spacing-sm;
-    margin-bottom: lib.$spacing-xl;
+    color: $color-white;
+    padding: $spacing-sm;
+    margin-bottom: $spacing-xl;
 
     .mzp-c-form-header + & {
-        margin-top: lib.$spacing-xl;
+        margin-top: $spacing-xl;
     }
 
     :last-child {

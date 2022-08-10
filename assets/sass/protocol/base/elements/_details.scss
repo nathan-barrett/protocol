@@ -2,24 +2,23 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@use '../../includes/lib';
+@use '../../includes/lib' as *;
 // @import '../../includes/mixins/details';
 
 .mzp-c-details,
 details {
-    @debug lib;
-    @include lib.details;
+    @include details;
 }
 
 summary,
 details .is-summary button,
 .mzp-c-details .is-summary button {
-    @include lib.summary;
+    @include summary;
 }
 
 // Override styling the native element when the polyfill is applied (issue #658)
 summary.is-summary {
-    @include lib.bidi(((padding-right, 0, padding-left, 0),));
+    @include bidi(((padding-right, 0, padding-left, 0),));
 
     &:before {
         display: none;
@@ -29,7 +28,7 @@ summary.is-summary {
 details[open] summary:before,
 details .is-summary button[aria-expanded=true]:before,
 .mzp-c-details .is-summary button[aria-expanded=true]:before {
-    @include lib.summary-open;
+    @include summary-open;
 }
 
 summary::-webkit-details-marker {

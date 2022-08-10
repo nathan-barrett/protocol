@@ -2,30 +2,30 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-@use '../../includes/lib';
+@use '../../includes/lib' as *;
 
 
 // Theme classes for background colors
 
 .mzp-t-background-secondary {
-    background-color: lib.get-theme('background-color-secondary');
+    background-color: get-theme('background-color-secondary');
 }
 
 .mzp-t-background-tertiary {
-    background-color: lib.get-theme('background-color-tertiary');
+    background-color: get-theme('background-color-tertiary');
 }
 
 .mzp-t-dark {
-    background-color: lib.get-theme('background-color-inverse');
-    color: lib.get-theme('body-text-color-inverse');
+    background-color: get-theme('background-color-inverse');
+    color: get-theme('body-text-color-inverse');
 }
 
 .mzp-t-dark.mzp-t-background-secondary,
 .mzp-t-dark .mzp-t-background-secondary {
-    background-color: lib.get-theme('background-color-secondary-inverse');
+    background-color: get-theme('background-color-secondary-inverse');
 }
 
 .mzp-t-dark.mzp-t-background-tertiary,
 .mzp-t-dark .mzp-t-background-tertiary {
-    background-color: lib.get-theme('background-color-tertiary-inverse');
+    background-color: get-theme('background-color-tertiary-inverse');
 }

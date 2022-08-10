@@ -11,9 +11,9 @@
 
 
 // Default media paths can be overwritten globally.
-$image-path: '../img' !default;
+// $image-path: '../img' !default;
 
-@import 'components/article';
+@use 'components/article';
 @import 'components/billboard';
 @import 'components/button';
 @import 'components/breadcrumb';
